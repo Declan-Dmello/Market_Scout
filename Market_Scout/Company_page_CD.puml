@@ -1,0 +1,65 @@
+@startuml
+
+class CompanyWindow {
+    + initUI()
+}
+
+class QApplication
+class QFrame {
+    + setFixedSize()
+    + setStyleSheet()
+    + move()
+    + show()
+    + raise_()
+    + lower()
+    + setLayout()
+    + layout()
+    + close()
+}
+
+class QLabel {
+    + setText()
+    + setWordWrap()
+    + setStyleSheet()
+    + move()
+    + show()
+    + setPixmap()
+}
+
+class QLineEdit {
+    + setPlaceholderText()
+    + setFixedWidth()
+    + setStyleSheet()
+    + move()
+    + show()
+    + text()
+}
+
+class QPushButton {
+    + clicked.connect()
+    + setCursor()
+    + setStyleSheet()
+    + setFixedSize()
+    + move()
+    + show()
+}
+
+class QScrollArea {
+    + setWidget()
+    + resize()
+    + show()
+}
+
+class FigureCanvasQTAgg
+class QVBoxLayout
+
+CompanyWindow ..> QApplication
+CompanyWindow ..> QFrame
+CompanyWindow ..> QLabel
+CompanyWindow ..> QLineEdit
+CompanyWindow ..> QPushButton
+CompanyWindow ..> QScrollArea
+CompanyWindow ..> FigureCanvasQTAgg
+QFrame ..> QVBoxLayout
+
+@enduml

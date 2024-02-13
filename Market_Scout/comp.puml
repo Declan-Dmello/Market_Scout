@@ -1,0 +1,84 @@
+@startuml
+
+class CompanyWindow {
+    + initUI()
+    + daily_graph()
+    + monthly_graph()
+    + half_yearly_graph()
+    + yearly_graph()
+    + stock_prediction()
+    + sentiment_analysis()
+}
+
+class QApplication
+class QIcon
+class ctypes
+class QPixmap
+class QImage
+class ModelWindow
+class FigureCanvasQTAgg
+class QVBoxLayout
+
+class QFrame {
+    + setFixedSize()
+    + setStyleSheet()
+    + move()
+    + show()
+    + raise_()
+    + lower()
+    + setLayout()
+    + layout()
+    + close()
+}
+
+class QLabel {
+    + setText()
+    + setWordWrap()
+    + setStyleSheet()
+    + move()
+    + show()
+    + setPixmap()
+}
+
+class QLineEdit {
+    + setPlaceholderText()
+    + setFixedWidth()
+    + setStyleSheet()
+    + move()
+    + show()
+    + text()
+}
+
+class QPushButton {
+    + clicked.connect()
+    + setCursor()
+    + setStyleSheet()
+    + setFixedSize()
+    + move()
+    + show()
+}
+
+class QScrollArea {
+    + setWidget()
+    + resize()
+    + show()
+}
+
+CompanyWindow .> QApplication
+CompanyWindow ..> QIcon
+CompanyWindow ..> ctypes
+CompanyWindow ..> QPixmap
+CompanyWindow ..> QImage
+CompanyWindow ..> ModelWindow
+QFrame ..> FigureCanvasQTAgg
+QFrame ..> QVBoxLayout
+CompanyWindow --* QFrame
+QFrame -- QLabel
+QFrame -- QLineEdit
+QFrame -- QPushButton
+CompanyWindow --* QLabel
+CompanyWindow --* QLineEdit
+CompanyWindow --* QPushButton
+CompanyWindow ..> QScrollArea
+
+@enduml

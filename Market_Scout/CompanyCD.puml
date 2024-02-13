@@ -1,0 +1,65 @@
+@startuml
+
+class Signup_Window {
+    + fp_page: object
+    + initUI()
+    + signup_section()
+    + login_section()
+    + fp_reset()
+    + fp_OTP()
+    + fp_func()
+    + checking_data()
+}
+
+class QApplication
+class QIcon
+class ctypes
+
+Signup_Window ..> QApplication
+Signup_Window ..> QIcon
+Signup_Window ..> ctypes
+
+class QFrame {
+    + setFixedSize()
+    + setStyleSheet()
+    + move()
+    + show()
+}
+
+class QLabel {
+    + setText()
+    + setWordWrap()
+    + setStyleSheet()
+    + move()
+    + show()
+}
+
+class QLineEdit {
+    + setPlaceholderText()
+    + setFixedWidth()
+    + setFixedHeight()
+    + setStyleSheet()
+    + move()
+    + show()
+    + text()
+}
+
+class QPushButton {
+    + clicked.connect()
+    + setCursor()
+    + setStyleSheet()
+    + setFixedHeight()
+    + setFixedWidth()
+    + move()
+    + show()
+}
+
+Signup_Window --* QFrame
+QFrame <|-- signup_page_bg_frame
+QFrame <|-- content_frame
+
+Signup_Window --* QLabel
+Signup_Window --* QLineEdit
+Signup_Window --* QPushButton
+
+@enduml
